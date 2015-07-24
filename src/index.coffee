@@ -11,7 +11,8 @@ tick = ->
     app.$data.message = "count = #{count}"
     setTimeout tick, 1000
   else
-    app.$data.message = "Vue.js!!!!!"
+    # data proxy (app.$data.message <- app.message)
+    app.message = "Vue.js!!!!!"
   count -= 1
 
 setTimeout tick, 1000
