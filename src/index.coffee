@@ -40,6 +40,9 @@ app = new Vue
       console.log 'on created(event)'
     ping: (message) ->
       console.log 'PONG' + message
+  watch:
+    count: (newValue, oldValue) ->
+      console.log "count: #{oldValue} -> #{newValue}"
 
 app.$emit 'ping', '!'
 
