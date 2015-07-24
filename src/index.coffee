@@ -1,10 +1,9 @@
 Vue = require 'vue'
 
-data =
-  count: 3
-  title: 'color-vue!'
-app = new Vue {
-  data
+app = new Vue
+  data:
+    count: 3
+    title: 'color-vue!'
   # TODO: props:
   methods:
     decriment: ->
@@ -13,10 +12,12 @@ app = new Vue {
     message: ->
       return 'Vue.js!!!!!' if @count is 0
       "count = #{@count}"
-}
-
-# Vue constructor data = instance $data
-console.log app.$data is data
+  template: '''
+    <div class="app">
+      <h1 v-text="title"></h1>
+      <p v-text="message"></p>
+    </div>
+  '''
 
 tick = ->
   app.decriment()
