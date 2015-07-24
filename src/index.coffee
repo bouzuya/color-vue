@@ -35,6 +35,13 @@ app = new Vue
     console.log 'on before destroy'
   destroyed: ->
     console.log 'on destroyed'
+  events:
+    'hook:created': ->
+      console.log 'on created(event)'
+    ping: (message) ->
+      console.log 'PONG' + message
+
+app.$emit 'ping', '!'
 
 tick = ->
   app.decriment()
