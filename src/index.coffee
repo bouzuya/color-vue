@@ -18,6 +18,7 @@ app = new Vue
       <p v-text="message"></p>
     </div>
   '''
+  replace: true # default: true
 
 tick = ->
   app.decriment()
