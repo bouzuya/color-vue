@@ -1,7 +1,6 @@
 Vue = require 'vue'
 
 app = new Vue
-  el: '#app'
   data:
     title: 'color-vue!'
     message: 'Hello, Vue.js!!'
@@ -16,3 +15,5 @@ tick = ->
   count -= 1
 
 setTimeout tick, 1000
+
+app.$mount '#app'
