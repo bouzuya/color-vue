@@ -1,9 +1,12 @@
 Vue = require 'vue'
 
-app = new Vue
-  data:
-    title: 'color-vue!'
-    message: 'Hello, Vue.js!!'
+data =
+  title: 'color-vue!'
+  message: 'Hello, Vue.js!!'
+app = new Vue { data }
+
+# Vue constructor data = instance $data
+console.log app.$data is data
 
 count = 3
 tick = ->
