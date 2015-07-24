@@ -19,6 +19,22 @@ app = new Vue
     </div>
   '''
   replace: true # default: true
+  created: ->
+    console.log 'on created'
+  beforeCompile: ->
+    console.log 'on before compile'
+  compiled: ->
+    console.log 'on compiled'
+  ready: ->
+    console.log 'on ready'
+  attached: ->
+    console.log 'on attached'
+  detached: ->
+    console.log 'on detached'
+  beforeDestroy: ->
+    console.log 'on before destroy'
+  destroyed: ->
+    console.log 'on destroyed'
 
 tick = ->
   app.decriment()
