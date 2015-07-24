@@ -43,6 +43,13 @@ app = new Vue
   watch:
     count: (newValue, oldValue) ->
       console.log "count: #{oldValue} -> #{newValue}"
+  mixins: [
+    created: ->
+      console.log 'mixin 1 created'
+  ,
+    created: ->
+      console.log 'mixin 2 created'
+  ]
 
 app.$emit 'ping', '!'
 
