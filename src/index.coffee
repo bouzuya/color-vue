@@ -35,6 +35,7 @@ app = new Vue
     console.log 'on before destroy'
   destroyed: ->
     console.log 'on destroyed'
+  inherit: false # default: false
   events:
     'hook:created': ->
       console.log 'on created(event)'
@@ -50,6 +51,7 @@ app = new Vue
     created: ->
       console.log 'mixin 2 created'
   ]
+  # TODO: name
 
 app.$emit 'ping', '!'
 
