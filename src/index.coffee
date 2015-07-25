@@ -76,3 +76,12 @@ console.log app.$$
 unwatch = app.$watch 'count', (newValue, oldValue) ->
   console.log "$watch count: #{oldValue} -> #{newValue}"
   unwatch() if newValue is 1
+
+# $get / $set
+console.log app.newCount
+# "[Vue warn]: You are setting a non-existent path "newCount" on a vm instance.
+# Consider pre-initializing the property with the "data" option for more
+# reliable reactivity and better performance."
+app.$set 'newCount', 5
+console.log app.$get 'newCount'
+console.log app.newCount
