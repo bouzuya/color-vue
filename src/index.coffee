@@ -61,3 +61,13 @@ tick = ->
 setTimeout tick, 1000
 
 app.$mount '#app'
+
+# instance properties
+console.log app.$el
+console.log app.$data
+console.log app.$option
+console.log app.$parent
+console.log app.$root
+console.log app.$children
+console.log app.$
+console.log app.$$
