@@ -85,3 +85,8 @@ console.log app.newCount
 app.$set 'newCount', 5
 console.log app.$get 'newCount'
 console.log app.newCount
+
+# TODO: $add / $delete
+
+# $eval
+console.log app.$eval 'title | uppercase'
