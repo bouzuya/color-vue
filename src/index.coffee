@@ -90,3 +90,5 @@ console.log app.newCount
 
 # $eval
 console.log app.$eval 'title | uppercase'
+
+console.log app.$log()
