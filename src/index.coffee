@@ -71,3 +71,8 @@ console.log app.$root
 console.log app.$children
 console.log app.$
 console.log app.$$
+
+# instance methods
+unwatch = app.$watch 'count', (newValue, oldValue) ->
+  console.log "$watch count: #{oldValue} -> #{newValue}"
+  unwatch() if newValue is 1
