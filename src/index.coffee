@@ -1,5 +1,6 @@
 Vue = require 'vue'
 cvHexColor = require './cv-hex-color'
+cvRgbColor = require './cv-rgb-color'
 
 Vue.config.debug = true
 Vue.config.strict = true
@@ -25,6 +26,8 @@ app = new Vue
       {{message}}
       <cv-hex-color color="{{color}}">
       </cv-hex-color>
+      <cv-rgb-color color="{{color}}">
+      </cv-rgb-color>
     </div>
   '''
   replace: true # default: true
@@ -46,6 +49,7 @@ app = new Vue
     console.log 'on destroyed'
   components:
     'cv-hex-color': cvHexColor
+    'cv-rgb-color': cvRgbColor
   inherit: false # default: false
   events:
     'hook:created': ->
