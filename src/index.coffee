@@ -8,7 +8,7 @@ Vue.config.interpolate = false
 
 app = new Vue
   data: ->
-    color: '#ff0000'
+    color: '#000000'
     count: 3
     title: 'color-vue!'
   # TODO: props:
@@ -24,6 +24,12 @@ app = new Vue
       <h1 v-text="title"></h1>
       <p v-text="message"></p>
       {{message}}
+      <hr />
+      <label>color</label>
+      <input
+        type="text"
+        v-model="color"
+        />
       <cv-hex-color color="{{color}}">
       </cv-hex-color>
       <cv-rgb-color color="{{color}}">
