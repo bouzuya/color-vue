@@ -1,7 +1,11 @@
 Vue = require 'vue'
 
+Vue.config.debug = true
+Vue.config.strict = true
+Vue.config.interpolate = false
+
 app = new Vue
-  data:
+  data: ->
     count: 3
     title: 'color-vue!'
   # TODO: props:
@@ -16,6 +20,7 @@ app = new Vue
     <div class="app">
       <h1 v-text="title"></h1>
       <p v-text="message"></p>
+      {{message}}
     </div>
   '''
   replace: true # default: true
