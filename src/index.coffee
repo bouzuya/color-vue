@@ -6,6 +6,7 @@ Vue.config.interpolate = false
 
 app = new Vue
   data: ->
+    color: '#ff0000'
     count: 3
     title: 'color-vue!'
   # TODO: props:
@@ -21,7 +22,8 @@ app = new Vue
       <h1 v-text="title"></h1>
       <p v-text="message"></p>
       {{message}}
-      <hoge></hoge>
+      <cv-hex-color color="{{color}}">
+      </cv-hex-color>
     </div>
   '''
   replace: true # default: true
@@ -42,10 +44,15 @@ app = new Vue
   destroyed: ->
     console.log 'on destroyed'
   components:
-    hoge:
-      data: ->
-        message: 'hoge'
-      template: '<p v-text="message"></p>'
+    'cv-hex-color':
+      props: ['color']
+      template: '''
+        <div
+          class="hex-color"
+          v-text="color"
+          >
+        </div>
+      '''
   inherit: false # default: false
   events:
     'hook:created': ->
