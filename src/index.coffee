@@ -21,6 +21,7 @@ app = new Vue
       <h1 v-text="title"></h1>
       <p v-text="message"></p>
       {{message}}
+      <hoge></hoge>
     </div>
   '''
   replace: true # default: true
@@ -40,6 +41,11 @@ app = new Vue
     console.log 'on before destroy'
   destroyed: ->
     console.log 'on destroyed'
+  components:
+    hoge:
+      data: ->
+        message: 'hoge'
+      template: '<p v-text="message"></p>'
   inherit: false # default: false
   events:
     'hook:created': ->
