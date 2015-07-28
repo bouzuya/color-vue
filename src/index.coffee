@@ -6,6 +6,14 @@ Vue.config.strict = true
 Vue.config.interpolate = false
 
 new Vue
+  el: 'title'
+  data: ->
+    title: 'color-vue!'
+  template: '''
+    <title v-text="title"></title>
+  '''
+
+new Vue
   el: '#app'
   data: ->
     color: '#000000'
