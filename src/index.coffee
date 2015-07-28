@@ -30,6 +30,7 @@ app = new Vue
         type="text"
         v-model="color"
         />
+      <span class="color-sample" v-style="{ color: color }">■</span>
       <cv-hex-color color="{{color}}">
       </cv-hex-color>
       <cv-rgb-color color="{{color}}">
